@@ -1,11 +1,8 @@
-
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { Brain, Code, Database } from "lucide-react";
-
 const AboutSection = () => {
-  return (
-    <section id="about" className="py-20 bg-light-gray dark:bg-dark">
+  return <section id="about" className="py-20 bg-light-gray dark:bg-dark">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-3 text-center text-gray-800 dark:text-white">
@@ -20,11 +17,7 @@ const AboutSection = () => {
         <div className="flex flex-col md:flex-row gap-10">
           <div className="md:w-1/2">
             <div className="relative">
-              <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80"
-                alt="Ankit Working"
-                className="w-full rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
-              />
+              <img alt="Ankit Working" className="w-full rounded-lg shadow-lg hover:shadow-xl transition-all duration-300" src="/lovable-uploads/cd15ce6a-230e-4c14-9138-8fc8d20e38ad.png" />
               <div className="absolute -top-5 -left-5 bg-tech-blue/10 border border-tech-blue/20 py-1 px-3 rounded-full backdrop-blur-sm">
                 <span className="text-tech-blue font-semibold">Tech Enthusiast</span>
               </div>
@@ -71,8 +64,6 @@ const AboutSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutSection;
