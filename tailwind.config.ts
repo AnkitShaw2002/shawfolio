@@ -63,11 +63,11 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for Ankit's portfolio
+				// Custom colors for Ankit's portfolio - updated for light mode
 				"tech-blue": "#00C1D4",
 				"navy": "#2A3F54",
-				"dark": "#121212",
-				"dark-card": "#1E1E1E",
+				"dark": "#FFFFFF", // Changed to white for light mode
+				"dark-card": "#F5F5F5", // Changed to light gray for light mode
 				"light-gray": "#F5F5F5"
 			},
 			borderRadius: {

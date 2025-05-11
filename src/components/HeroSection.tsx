@@ -7,7 +7,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="min-h-screen pt-16 flex flex-col justify-center bg-dark bg-tech-pattern relative overflow-hidden"
+      className="min-h-screen pt-16 flex flex-col justify-center bg-white bg-tech-pattern relative overflow-hidden"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 z-0">
@@ -22,11 +22,11 @@ const HeroSection = () => {
             <span className="inline-block py-1 px-3 mb-4 rounded-full bg-tech-blue/10 text-tech-blue border border-tech-blue/20 text-sm backdrop-blur-sm">
               Tech Enthusiast & Problem Solver
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
               Welcome to My <span className="text-gradient relative">Creative Space</span>
               <div className="absolute -bottom-2 left-0 h-1 w-16 bg-tech-blue/50 rounded-full"></div>
             </h1>
-            <p className="text-lg text-gray-300 mb-8 max-w-lg">
+            <p className="text-lg text-gray-600 mb-8 max-w-lg">
               Building innovative solutions with <span className="text-tech-blue font-medium">Java Development</span> and <span className="text-tech-blue font-medium">Data Science</span>. Passionate about creating efficient, elegant code and data-driven applications.
             </p>
             
@@ -34,23 +34,23 @@ const HeroSection = () => {
               <Button className="bg-tech-blue hover:bg-tech-blue/90 text-white shadow-lg shadow-tech-blue/20 transition-all duration-300 hover:scale-105">
                 View Portfolio
               </Button>
-              <Button variant="outline" className="border-gray-600 hover:bg-gray-800 text-white backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-tech-blue/50">
+              <Button variant="outline" className="border-gray-300 hover:bg-gray-100 text-gray-800 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-tech-blue/50">
                 Contact Me
               </Button>
             </div>
             
             <div className="mt-10 flex flex-wrap items-center gap-8">
-              <div className="flex items-center space-x-2 bg-dark-card/60 backdrop-blur-sm py-2 px-3 rounded-full">
+              <div className="flex items-center space-x-2 bg-gray-100/60 backdrop-blur-sm py-2 px-3 rounded-full">
                 <div className="w-2 h-2 rounded-full bg-tech-blue animate-pulse-glow"></div>
-                <p className="text-sm text-gray-400">Java Developer</p>
+                <p className="text-sm text-gray-600">Java Developer</p>
               </div>
-              <div className="flex items-center space-x-2 bg-dark-card/60 backdrop-blur-sm py-2 px-3 rounded-full">
+              <div className="flex items-center space-x-2 bg-gray-100/60 backdrop-blur-sm py-2 px-3 rounded-full">
                 <div className="w-2 h-2 rounded-full bg-tech-blue animate-pulse-glow"></div>
-                <p className="text-sm text-gray-400">Data Scientist</p>
+                <p className="text-sm text-gray-600">Data Scientist</p>
               </div>
-              <div className="flex items-center space-x-2 bg-dark-card/60 backdrop-blur-sm py-2 px-3 rounded-full">
+              <div className="flex items-center space-x-2 bg-gray-100/60 backdrop-blur-sm py-2 px-3 rounded-full">
                 <div className="w-2 h-2 rounded-full bg-tech-blue animate-pulse-glow"></div>
-                <p className="text-sm text-gray-400">Problem Solver</p>
+                <p className="text-sm text-gray-600">Problem Solver</p>
               </div>
             </div>
           </div>
@@ -65,9 +65,9 @@ const HeroSection = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-dark-card/90 p-4 rounded-lg border border-gray-700/50 shadow-xl backdrop-blur-sm">
+              <div className="absolute -bottom-6 -right-6 bg-white/90 p-4 rounded-lg border border-gray-200 shadow-xl backdrop-blur-sm">
                 <p className="text-tech-blue font-medium">B.Tech CSE</p>
-                <p className="text-sm text-gray-400">Expected 2025</p>
+                <p className="text-sm text-gray-600">Expected 2025</p>
               </div>
 
               <div className="absolute -z-10 -bottom-8 -left-8 w-32 h-32 bg-tech-blue/5 rounded-full blur-xl"></div>
@@ -77,7 +77,7 @@ const HeroSection = () => {
         </div>
         
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center animate-bounce">
-          <a href="#about" className="inline-block p-2 bg-dark-card/80 rounded-full border border-gray-800 shadow-lg backdrop-blur-sm hover:border-tech-blue/50 transition-all">
+          <a href="#about" className="inline-block p-2 bg-white/80 rounded-full border border-gray-200 shadow-lg backdrop-blur-sm hover:border-tech-blue/50 transition-all">
             <ChevronDown className="text-tech-blue" size={24} />
           </a>
         </div>

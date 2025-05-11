@@ -82,7 +82,7 @@
   }
 
   body {
-    @apply bg-dark text-foreground;
+    @apply bg-background text-foreground;
   }
   
   html {
@@ -97,7 +97,7 @@
   }
   
   .tech-card {
-    @apply bg-dark-card rounded-lg border border-gray-800 hover:border-tech-blue/50 transition-all duration-300;
+    @apply bg-dark-card rounded-lg border border-gray-200 hover:border-tech-blue/50 transition-all duration-300;
   }
   
   .tech-card:hover {
