@@ -1,14 +1,8 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-
 const HeroSection = () => {
-  return (
-    <section
-      id="home"
-      className="min-h-screen pt-16 flex flex-col justify-center bg-white bg-tech-pattern relative overflow-hidden"
-    >
+  return <section id="home" className="min-h-screen pt-16 flex flex-col justify-center bg-white bg-tech-pattern relative overflow-hidden">
       {/* Enhanced animated background elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-tech-blue/10 blur-3xl"></div>
@@ -61,11 +55,7 @@ const HeroSection = () => {
               {/* Enhanced profile image with glowing effect */}
               <div className="absolute -inset-1 bg-gradient-to-r from-tech-blue via-tech-blue/70 to-tech-blue/30 rounded-full blur opacity-70 animate-pulse-glow"></div>
               <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl bg-gradient-to-b from-white to-gray-100">
-                <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
-                  alt="Ankit Shaw"
-                  className="w-full h-full object-cover"
-                />
+                <img alt="Ankit Shaw" className="w-full h-full object-cover" src="/lovable-uploads/9fb2e7d1-9d73-459b-a370-d05aa0ff4999.jpg" />
               </div>
               
               {/* Enhanced info card */}
@@ -91,8 +81,6 @@ const HeroSection = () => {
           </a>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
