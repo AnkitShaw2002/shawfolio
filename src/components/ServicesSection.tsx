@@ -15,8 +15,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description }) =
       <div className="w-14 h-14 rounded-lg bg-tech-blue/10 flex items-center justify-center mb-5">
         {icon}
       </div>
-      <h3 className="text-xl font-bold text-white mb-3">{title}</h3>
-      <p className="text-gray-400">{description}</p>
+      <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3">{title}</h3>
+      <p className="text-adaptive-light">{description}</p>
     </Card>
   );
 };
@@ -50,14 +50,14 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-dark bg-tech-pattern">
+    <section id="services" className="py-20 bg-white dark:bg-dark bg-tech-pattern">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-center text-gray-800 dark:text-white">
             My <span className="text-gradient">Services</span>
           </h2>
           <div className="w-24 h-1 bg-tech-blue mb-6 rounded-full"></div>
-          <p className="text-gray-400 text-center max-w-2xl">
+          <p className="text-adaptive-light text-center max-w-2xl">
             Specialized solutions and services that I offer to help you achieve your goals.
           </p>
         </div>

@@ -21,24 +21,24 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
   skills,
 }) => {
   return (
-    <Card className="tech-card p-6 relative">
+    <Card className="tech-card p-6 relative hover-lift">
       <div className="absolute top-0 right-0 w-2 h-16 bg-tech-blue rounded-bl-lg rounded-tr-lg"></div>
-      <h3 className="text-xl font-bold text-white mb-1">{title}</h3>
+      <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-1">{title}</h3>
       <h4 className="text-tech-blue font-semibold mb-3">{company}</h4>
       
       <div className="flex flex-wrap gap-4 mb-4">
-        <div className="flex items-center text-gray-400 text-sm">
+        <div className="flex items-center text-adaptive-light text-sm">
           <Calendar className="mr-1" size={16} />
           {period}
         </div>
-        <div className="flex items-center text-gray-400 text-sm">
+        <div className="flex items-center text-adaptive-light text-sm">
           <MapPin className="mr-1" size={16} />
           {location}
         </div>
       </div>
       
       <div className="mb-4">
-        <ul className="list-disc list-inside text-gray-300 space-y-2">
+        <ul className="list-disc list-inside text-adaptive-medium space-y-2">
           {description.map((item, index) => (
             <li key={index}>{item}</li>
           ))}
@@ -88,14 +88,14 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-dark bg-tech-pattern">
+    <section id="experience" className="py-20 bg-white dark:bg-dark bg-tech-pattern">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-center text-gray-800 dark:text-white">
             Work <span className="text-gradient">Experience</span>
           </h2>
           <div className="w-24 h-1 bg-tech-blue mb-6 rounded-full"></div>
-          <p className="text-gray-400 text-center max-w-2xl">
+          <p className="text-adaptive-light text-center max-w-2xl">
             My professional journey and internship experiences that have shaped my skills and expertise.
           </p>
         </div>
@@ -107,9 +107,9 @@ const ExperienceSection = () => {
         </div>
         
         <div className="mt-12 text-center">
-          <div className="inline-flex items-center justify-center gap-2 py-3 px-6 rounded-full bg-tech-blue/10 border border-tech-blue/20">
+          <div className="inline-flex items-center justify-center gap-2 py-3 px-6 rounded-full bg-tech-blue/10 border border-tech-blue/20 hover:bg-tech-blue/20 transition-all duration-300">
             <Briefcase className="text-tech-blue" size={20} />
-            <p className="text-white">Currently seeking new opportunities for 2024</p>
+            <p className="text-gray-800 dark:text-white">Currently seeking new opportunities for 2024</p>
           </div>
         </div>
       </div>

@@ -24,7 +24,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
   liveUrl,
 }) => {
   return (
-    <Card className="tech-card overflow-hidden group">
+    <Card className="tech-card overflow-hidden group hover-lift">
       <div className="relative overflow-hidden">
         <img
           src={image}
@@ -38,14 +38,14 @@ const ProjectCard: React.FC<ProjectProps> = ({
         </div>
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
-        <p className="text-gray-400 mb-4">{description}</p>
+        <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">{title}</h3>
+        <p className="text-adaptive-light mb-4">{description}</p>
         
         <div className="flex flex-wrap gap-2 mb-5">
           {technologies.map((tech, index) => (
             <span
               key={index}
-              className="text-xs bg-dark py-1 px-2 rounded border border-gray-700 text-gray-400"
+              className="text-xs bg-gray-100 dark:bg-gray-800 py-1 px-2 rounded border border-gray-200 dark:border-gray-700 text-adaptive-light"
             >
               {tech}
             </span>
@@ -57,7 +57,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
             <Button
               variant="outline"
               size="sm"
-              className="border-gray-700 hover:border-tech-blue hover:bg-tech-blue/10"
+              className="border-gray-300 dark:border-gray-700 hover:border-tech-blue hover:bg-tech-blue/10"
               asChild
             >
               <a href={githubUrl} target="_blank" rel="noopener noreferrer">
@@ -127,14 +127,14 @@ const PortfolioSection = () => {
     : projects.filter(project => project.category === activeFilter);
 
   return (
-    <section id="portfolio" className="py-20 bg-dark">
+    <section id="portfolio" className="py-20 bg-light-gray dark:bg-dark">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-center text-gray-800 dark:text-white">
             My <span className="text-gradient">Projects</span>
           </h2>
           <div className="w-24 h-1 bg-tech-blue mb-6 rounded-full"></div>
-          <p className="text-gray-400 text-center max-w-2xl">
+          <p className="text-adaptive-light text-center max-w-2xl">
             Showcasing my best work across different domains and technologies.
           </p>
         </div>
@@ -148,7 +148,7 @@ const PortfolioSection = () => {
                 className={
                   activeFilter === filter
                     ? "bg-tech-blue hover:bg-tech-blue/90"
-                    : "border-gray-700 hover:border-tech-blue hover:bg-tech-blue/10"
+                    : "border-gray-300 dark:border-gray-700 hover:border-tech-blue hover:bg-tech-blue/10"
                 }
                 onClick={() => setActiveFilter(filter)}
               >

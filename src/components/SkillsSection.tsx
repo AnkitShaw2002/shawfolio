@@ -13,16 +13,16 @@ interface SkillCategoryProps {
 
 const SkillCategory: React.FC<SkillCategoryProps> = ({ title, skills }) => {
   return (
-    <Card className="tech-card p-6">
-      <h3 className="text-xl font-bold text-white mb-6">{title}</h3>
+    <Card className="tech-card p-6 hover-lift">
+      <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-6">{title}</h3>
       <div className="space-y-6">
         {skills.map((skill, index) => (
           <div key={index} className="space-y-2">
             <div className="flex justify-between items-center">
-              <span className="text-gray-300">{skill.name}</span>
+              <span className="text-adaptive-medium">{skill.name}</span>
               <span className="text-tech-blue">{skill.level}%</span>
             </div>
-            <Progress value={skill.level} className="h-2 bg-gray-700">
+            <Progress value={skill.level} className="h-2 bg-gray-200 dark:bg-gray-700">
               <div
                 className="h-full bg-gradient-to-r from-tech-blue to-blue-500 rounded-full"
                 style={{ width: `${skill.level}%` }}
@@ -76,14 +76,14 @@ const SkillsSection = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-dark">
+    <section id="skills" className="py-20 bg-light-gray dark:bg-dark">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-center text-gray-800 dark:text-white">
             My <span className="text-gradient">Skills</span>
           </h2>
           <div className="w-24 h-1 bg-tech-blue mb-6 rounded-full"></div>
-          <p className="text-gray-400 text-center max-w-2xl">
+          <p className="text-adaptive-light text-center max-w-2xl">
             A comprehensive overview of my technical and soft skills developed through education and experience.
           </p>
         </div>

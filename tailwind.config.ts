@@ -63,12 +63,12 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for Ankit's portfolio - updated for light mode
+				// Custom colors for Ankit's portfolio - updated for light mode with dark mode support
 				"tech-blue": "#00C1D4",
 				"navy": "#2A3F54",
-				"dark": "#FFFFFF", // Changed to white for light mode
-				"dark-card": "#F5F5F5", // Changed to light gray for light mode
-				"light-gray": "#F5F5F5"
+				"dark": "#111827",         // Dark background for dark mode
+				"dark-card": "#1E293B",    // Dark card background for dark mode
+				"light-gray": "#F9FAFB"    // Light gray for light mode backgrounds
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
