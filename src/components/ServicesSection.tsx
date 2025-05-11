@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Card } from "@/components/ui/card";
-import { MonitorCode, Database, LineChart, School } from "lucide-react";
+import { MonitorCog, Database, LineChart, School } from "lucide-react";
 
 interface ServiceCardProps {
   icon: React.ReactNode;
@@ -24,7 +24,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description }) =
 const ServicesSection = () => {
   const services = [
     {
-      icon: <MonitorCode className="text-tech-blue" size={28} />,
+      icon: <MonitorCog className="text-tech-blue" size={28} />,
       title: "Custom Software Development",
       description:
         "Specialized in developing desktop applications using Java Swing and creating efficient database systems with MySQL.",
