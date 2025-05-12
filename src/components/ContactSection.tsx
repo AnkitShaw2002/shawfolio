@@ -1,10 +1,12 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Loader2 } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import emailjs from 'emailjs-com';
 
 interface ContactInfoProps {
   icon: React.ReactNode;
@@ -37,10 +39,71 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ icon, title, content, link })
 };
 
 const ContactSection = () => {
-  const handleSubmit = (e: React.FormEvent) => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({ ...prev, [id]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real implementation, we would handle the form submission here
-    console.log("Form submitted");
+    
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      toast({
+        title: "Error",
+        description: "Please fill in all fields",
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
+    try {
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      };
+      
+      await emailjs.send(
+        'service_elox5q5', 
+        'template_osdhc9v', 
+        templateParams, 
+        'SH5vX1_vnPol7p8ly'
+      );
+      
+      toast({
+        title: "Success",
+        description: "Your message has been sent successfully!",
+      });
+      
+      // Reset form after successful submission
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Email sending failed:", error);
+      toast({
+        title: "Failed to send message",
+        description: "There was an error sending your message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -150,6 +213,8 @@ const ContactSection = () => {
                     id="name"
                     placeholder="John Doe"
                     className="bg-dark border-gray-700 focus:border-tech-blue"
+                    value={formData.name}
+                    onChange={handleChange}
                     required
                   />
                 </div>
@@ -162,6 +227,8 @@ const ContactSection = () => {
                     type="email"
                     placeholder="johndoe@example.com"
                     className="bg-dark border-gray-700 focus:border-tech-blue"
+                    value={formData.email}
+                    onChange={handleChange}
                     required
                   />
                 </div>
@@ -175,6 +242,8 @@ const ContactSection = () => {
                   id="subject"
                   placeholder="How can I help you?"
                   className="bg-dark border-gray-700 focus:border-tech-blue"
+                  value={formData.subject}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -188,12 +257,27 @@ const ContactSection = () => {
                   placeholder="Your message here..."
                   className="bg-dark border-gray-700 focus:border-tech-blue resize-none"
                   rows={5}
+                  value={formData.message}
+                  onChange={handleChange}
                   required
                 />
               </div>
               
-              <Button type="submit" className="bg-tech-blue hover:bg-tech-blue/90">
-                <Send className="mr-2" size={18} /> Send Message
+              <Button 
+                type="submit" 
+                className="bg-tech-blue hover:bg-tech-blue/90"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <Send className="mr-2" size={18} /> Send Message
+                  </>
+                )}
               </Button>
             </form>
           </Card>
